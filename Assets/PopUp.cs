@@ -85,7 +85,7 @@ public class PopUp : MonoBehaviour
 
     }
 
-    private void SetAnimation()
+    public void SetAnimation()
     {
         if(typeOfPopUp == 0) GetComponent<Animator>().Play("Burger");
         if(typeOfPopUp == 1) GetComponent<Animator>().Play("cat");

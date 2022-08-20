@@ -32,6 +32,7 @@ public class GameFlowController : MonoBehaviour
         foreach (GameObject ele  in list[tab])
         {
             ele.SetActive(true);
+            ele.GetComponent<PopUp>().SetAnimation();
         }
         tabs[CURRENTAB].SetActive(false);
         tabs[tab].SetActive(true);
