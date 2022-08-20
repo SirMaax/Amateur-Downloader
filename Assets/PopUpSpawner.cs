@@ -25,7 +25,7 @@ public class PopUpSpawner : MonoBehaviour
 
     [Header("Refs")] public GameObject popupPrefab;
     public int[] test;
-    [Header("Private Stuff")] private int layerInOrder = 1;
+    [Header("Private Stuff")] public static int layerInOrder = 1;
 
     private float zAchsis = 1;
     //-----------------------------------------------
