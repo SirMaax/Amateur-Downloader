@@ -16,9 +16,10 @@ public class PopUpSpawner : MonoBehaviour
     [Header("SpawningTime")] [SerializeField]
     private float intervalBetweenSpawning;
     public bool canSpawn = false;
-    
-    
-    
+
+    [Header("Tab")] 
+    public ArrayList[] tabObject;
+
     [Header("Refs")] public GameObject popupPrefab;
     
     [Header("Private Stuff")]
@@ -31,6 +32,10 @@ public class PopUpSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tabObject = new ArrayList[3];
+        tabObject[0] = new ArrayList();
+        tabObject[1] = new ArrayList();
+        tabObject[2] = new ArrayList();
         SpawnWhenPossible();
     }
 
@@ -58,5 +63,7 @@ public class PopUpSpawner : MonoBehaviour
         sp.sortingOrder = layerInOrder;
         layerInOrder++;
         zAchsis += 0.0001f;
+
+        tabObject[GameFlowController.CURRENTAB].Add(popUp);
     }
 }
