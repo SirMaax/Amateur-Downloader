@@ -60,7 +60,7 @@ public class Mover : MonoBehaviour
     public void OnMouseUp()
     {
         offset = Vector2.zero;
-        PopUpSpawner.layerInOrder++;
+        PopUpSpawner.layerInOrder+=2;
         sp.sortingOrder = PopUpSpawner.layerInOrder;
         var temp = transform.parent.position;
         PopUpSpawner.zAchsis += 0.01f;
