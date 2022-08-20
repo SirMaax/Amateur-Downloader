@@ -20,7 +20,9 @@ public class PopUp : MonoBehaviour
     private bool closing = false;
     public Vector2 offset;
     private bool canDelete;
-    
+
+    [Header("Refs")] 
+    public PopUpSpawner spawner;
     void Start()
     {
         SetSizeOfDelete();
@@ -64,7 +66,7 @@ public class PopUp : MonoBehaviour
         if ( dragging  ) return;
         closing = true;
         Debug.Log("clicked on popup");
-        if (!hasCloseTime) Destroy(gameObject);
+        if (!hasCloseTime) RemoveObject();
         else StartCoroutine(Destroy());
     }
 
@@ -114,7 +116,7 @@ public class PopUp : MonoBehaviour
     private IEnumerator Destroy()
     {
         yield return new WaitForSeconds(timeTillClose);
-        Destroy(gameObject);
+        RemoveObject();
     }
 
     private void ClampBoxInside()
@@ -130,5 +132,11 @@ public class PopUp : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         DestroyObject();
         
+    }
+
+    private void RemoveObject()
+    {
+        spawner.RemovePopUp(gameObject);
+
     }
 }

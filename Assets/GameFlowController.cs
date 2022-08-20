@@ -13,6 +13,7 @@ public class GameFlowController : MonoBehaviour
     void Start()
     {
         popUpSpawner = popUpObject.GetComponent<PopUpSpawner>();
+        
     }
 
     // Update is called once per frame
@@ -23,17 +24,20 @@ public class GameFlowController : MonoBehaviour
 
     public void SwitchToTab(int tab)
     {
-        foreach (GameObject ele  in popUpSpawner.tabObject[CURRENTAB])
+        ArrayList[] list = popUpSpawner.GetTabObject();
+        foreach (GameObject ele  in list[CURRENTAB])
         {
             ele.SetActive(false);
         }
-        foreach (GameObject ele  in popUpSpawner.tabObject[tab])
+        foreach (GameObject ele  in list[tab])
         {
             ele.SetActive(true);
         }
         tabs[CURRENTAB].SetActive(false);
-        tabs[tab].SetActive(false);
-
+        tabs[tab].SetActive(true);
+        
+        
+        
         CURRENTAB = tab;
     }
 }

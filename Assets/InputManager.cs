@@ -28,6 +28,5 @@ public class InputManager : MonoBehaviour
             mousepos.y < MapStats.MAPHEIGHT.x && mousepos.y > -MapStats.MAPHEIGHT.y) mouseInSide = true;
         else mouseInSide = false;
         
-        Debug.Log(mousepos);
     }
 }
