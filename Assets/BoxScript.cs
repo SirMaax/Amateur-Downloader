@@ -23,9 +23,9 @@ public class BoxScript : MonoBehaviour
     public void Update()
 
     {
-        Vector3 temp = popUp.transform.position;
-        temp.z = zAchsis;
-        transform.position = temp;
+        // Vector3 temp = popUp.transform.position;
+        // temp.z = zAchsis;
+        // transform.position = temp;
     }
 
     public void OnMouseDown()
