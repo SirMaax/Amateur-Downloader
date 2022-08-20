@@ -62,7 +62,6 @@ public class PopUpSpawner : MonoBehaviour
         }
 
         time += Random.Range(intervalBetweenSpawning.x, intervalBetweenSpawning.y);
-        Debug.Log(time);
         yield return new WaitForSeconds(time);
         canSpawn = true;
     }
