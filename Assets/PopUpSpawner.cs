@@ -26,8 +26,7 @@ public class PopUpSpawner : MonoBehaviour
     [Header("Refs")] public GameObject popupPrefab;
     public int[] test;
     [Header("Private Stuff")] public static int layerInOrder = 1;
-
-    private float zAchsis = 1;
+    public static float zAchsis = 2;
     //-----------------------------------------------
 
     private void Start()
@@ -76,17 +75,20 @@ public class PopUpSpawner : MonoBehaviour
         pos.x = Random.Range(-xDistance + sizeX / 2, xDistance - sizeX / 2);
         pos.y = Random.Range(yDistance.x - sizeY / 2, yDistance.y + sizeY / 2);
         pos.z = -zAchsis;
-
+        int r = Random.Range(0, 2);
         GameObject popUp = Instantiate(popupPrefab, pos, Quaternion.identity);
         popUp.GetComponent<PopUp>().spawner = this;
-        
+        popUp.GetComponent<PopUp>().typeOfPopUp = r;
+        popUp.GetComponent<PopUp>().zachsis= zAchsis;
+
         SpriteRenderer sp = popUp.GetComponent<SpriteRenderer>();
-        sp.color = Random.ColorHSV();
+        // sp.color = Random.ColorHSV();
         
         sp.sortingOrder = layerInOrder;
         layerInOrder++;
-        zAchsis += 0.0001f;
-
+        
+        zAchsis +=0.01f;
+        
         tabObject[GameFlowController.CURRENTAB].Add(popUp);
     }
 

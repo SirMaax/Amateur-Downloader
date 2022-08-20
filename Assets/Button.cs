@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class Button : MonoBehaviour
 {
     [Header("Info")] 
     public bool realButton;
+
+    public String info;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,9 @@ public class Button : MonoBehaviour
     {
         
     }
-    
-    
+
+    public void OnMouseDown()
+    {
+        Debug.Log("info");
+    }
 }

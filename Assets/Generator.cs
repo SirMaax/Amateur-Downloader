@@ -15,6 +15,7 @@ public class Generator : MonoBehaviour
     
     [Header("Size")] 
     [Range(0, 3)] public int size;
+    public Vector2[] colliderSize;
     
     [Header("Animation")] 
     [Range(0, 2)] public int animation; // 0 is none , 1 is lines 2 is up and down
@@ -61,7 +62,8 @@ public class Generator : MonoBehaviour
     }
 
     private void SetSize()
-    { 
+    {
+        SetColliderSize();
         firstChild.transform.position = transform.position;
         secondChild.transform.position = transform.position;
         Animator.enabled = false;
@@ -145,5 +147,12 @@ public class Generator : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         gen = true;
+    }
+
+    private void SetColliderSize()
+    {
+        BoxCollider2D collider2D = GetComponent<BoxCollider2D>();
+
+        collider2D.size = colliderSize[this.size];
     }
 }
