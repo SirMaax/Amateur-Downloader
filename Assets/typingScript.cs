@@ -22,6 +22,10 @@ public class typingScript : MonoBehaviour
     }
 
 
+    public void doStuff(){
+        StartCoroutine(typeTextintro());
+    }
+
     public IEnumerator typeTextintro(){
         for( int i = 0; i < steps; i++){
             transform.position+= new Vector3(0.24f, 0, 0);

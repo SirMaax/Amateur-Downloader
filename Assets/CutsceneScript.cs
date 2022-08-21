@@ -13,13 +13,19 @@ public class CutsceneScript : MonoBehaviour
     public Sprite[] searchTextSprites;
 
     public Sprite[] tabTextSprites;
+
+    public Sprite[] popUpSprites;
     
 
     int iter;
+    int vpnState;
     // Start is called before the first frame update
     void Start()
     {
         iter = 0;
+        vpnState = 0;
+        transform.GetChild(3).GetComponent<typingScript>().doStuff();
+        
     }
 
     // Update is called once per frame
@@ -40,7 +46,13 @@ public class CutsceneScript : MonoBehaviour
             transform.GetChild(1).gameObject.SetActive(true);
         }
         else{
-
+            transform.GetChild(2).gameObject.SetActive(false);
+            // Change to browser Results
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = browserSprites[2];
+            // Makes the Links clickable
+            transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
+            // Enables the Title
+            transform.GetChild(1).gameObject.SetActive(true);
         }
 
     }
@@ -58,43 +70,57 @@ public class CutsceneScript : MonoBehaviour
 
             // Prepare for Level 1 - n
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = browserSprites[0];
-            transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = tabTextSprites[1];
             transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = searchTextSprites[1];
-            iter++;
         }
         else{
-            
+            // Disables the Search Site
+            transform.GetChild(0).gameObject.SetActive(false);
+            // Enables the Game Controller
+            gameController.SetActive(true);
+            // Starts Level 0
+            gameController.gameObject.GetComponent<GameFlowController>().AcitvateLevel0();
         }
 
     }
 
     // Plays a cutscen when the level has ended
-    public void EndLevel(int index){
+    public void DisplayEndCutsceneObjects(){
         gameController.SetActive(false);
-        if(index == 0) {
+        Debug.Log("YOOOOO");
+        if(iter == 0) {
             cutsceneObjects[0].gameObject.SetActive(true);
+
         }
         else {
-            DisplayEndCutsceneElement(1);
+            cutsceneObjects[1].gameObject.SetActive(true);
         }
         
     }
 
-
-    // Plays the Cutscene for the given level
-    public void InitStartCutsceneLevel(){
-        
-    }
-
-    public void DisplayEndCutsceneElement(int e){
-        if(e < cutsceneObjects.Length-1 ){
-            cutsceneObjects[e].gameObject.SetActive(false);
-            cutsceneObjects[e+1].gameObject.SetActive(true);
+    public void EndCutscene(){
+        if(iter == 0){
+                cutsceneObjects[0].gameObject.SetActive(false);
+                iter++;
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = tabTextSprites[1];
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(3).GetComponent<typingScript>().doStuff();
         }
         else{
-
+            if(vpnState == 0){
+                cutsceneObjects[1].GetComponent<SpriteRenderer>().sprite = popUpSprites[1];
+            }
+            else{
+                cutsceneObjects[1].gameObject.SetActive(false);
+                cutsceneObjects[1].GetComponent<SpriteRenderer>().sprite = popUpSprites[0];
+                transform.GetChild(3).GetComponent<typingScript>().doStuff();
+            }
         }
     }
+
+
 
 
 

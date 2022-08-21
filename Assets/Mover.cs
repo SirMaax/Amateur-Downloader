@@ -79,6 +79,7 @@ public class Mover : MonoBehaviour
         if (type == 2 || type == 3)
         {
     //TRIGGER FOR EXPIRE
+            GameObject.FindWithTag("Cutscene").GetComponent<CutsceneScript>().EndCutscene();
             
         }
         else

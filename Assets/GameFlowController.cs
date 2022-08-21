@@ -89,8 +89,8 @@ public class GameFlowController : MonoBehaviour
         NextLevel = false;
         Debug.Log("next level");
         //Deactivate all stuff 
+        CutsceneScript.GetComponent<CutsceneScript>().DisplayEndCutsceneObjects();
         StopAll();
-        // CutsceneScript.GetComponent<CutsceneScript>().EndLevel(currentLevel);
         
     }
 
