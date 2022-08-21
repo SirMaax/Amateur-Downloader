@@ -17,7 +17,9 @@ public class GameFlowController : MonoBehaviour
     public static bool NextLevel;
     public static int currentLevel;
     private SoundManager sound;
-    
+
+
+    [Header("Level1")] public GameObject tabCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,5 +80,10 @@ public class GameFlowController : MonoBehaviour
     private void TriggerNextLevel()
     {
         
+    }
+
+    private void AcitvateLevel()
+    {
+        tabCollider.SetActive(true);
     }
 }
