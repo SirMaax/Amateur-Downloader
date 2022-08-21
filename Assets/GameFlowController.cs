@@ -30,6 +30,7 @@ public class GameFlowController : MonoBehaviour
         popUpSpawner = popUpObject.GetComponent<PopUpSpawner>();
         sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
         currentLevel = 0;
+        popUpSpawner.StartIn5();
     }
 
     // Update is called once per frame

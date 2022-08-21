@@ -161,5 +161,18 @@ public class PopUpSpawner : MonoBehaviour
         {
             Destroy(ele);
         }
+        
+        
+    }
+
+    public void StartIn5()
+    {
+        StartCoroutine(FirstSpawn());
+    }
+
+    private IEnumerator FirstSpawn()
+    {
+        yield return new WaitForSeconds(5);
+        canSpawn = true;
     }
 }
