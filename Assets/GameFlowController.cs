@@ -79,6 +79,7 @@ public class GameFlowController : MonoBehaviour
     private void TriggerGameOver()
     {
         sound.Play(5);
+        StopAll();
         
     }
 
