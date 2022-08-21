@@ -9,13 +9,13 @@ public class Button : MonoBehaviour
     [Header("Info")] 
     public bool realButton;
     public String info;
-
-    [Header("Downloading")] public static bool Downloading;
     
+    [Header("Downloading")] 
+    public static bool Downloading;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Generate
     }
 
     // Update is called once per frame
@@ -26,20 +26,11 @@ public class Button : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (Downloading)
-        {
-            //Play negative Sound
-            return;
-        }
-        else
-        {
-            //CanDownload
-            Downloading = true;
-            //StartTimeTillCompletion
-        }
+        GameObject.FindWithTag("Downloader").GetComponent<DownLoadManager>().StartDownload(realButton);
         
+
     }
-    
-    // [CanBeNull] private IEnumerator TimeTillDownloadComplete
-    
+
+   
+  
 }
