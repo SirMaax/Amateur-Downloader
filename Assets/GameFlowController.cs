@@ -9,6 +9,8 @@ public class GameFlowController : MonoBehaviour
     [Header("Refs")] public GameObject popUpObject;
     private PopUpSpawner popUpSpawner;
     public GameObject[] tabs;
+
+    public static bool GameOver = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +38,6 @@ public class GameFlowController : MonoBehaviour
         }
         tabs[CURRENTAB].SetActive(false);
         tabs[tab].SetActive(true);
-        
-        
         
         CURRENTAB = tab;
     }

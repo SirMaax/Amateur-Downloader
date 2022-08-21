@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetUp();
+        // SetUp();
     }
 
     public void Update()
@@ -30,14 +30,14 @@ public class Mover : MonoBehaviour
         // transform.position = temp;
     }
 
-    private void SetUp()
-    {
-        sp = transform.parent.GetComponent<SpriteRenderer>();
-        BoxCollider2D col = GetComponent<BoxCollider2D>();
-        col.size = colliderSize;
-        col.offset = setOffset;
-        // gameObject.transform.position = new Vector3(0, 0, -zAchsis);
-    }
+    // private void SetUp()
+    // {
+    //     // sp = transform.parent.GetComponent<SpriteRenderer>();
+    //     // BoxCollider2D col = GetComponent<BoxCollider2D>();
+    //     // col.size = colliderSize;
+    //     // col.offset = setOffset;
+    //     // // gameObject.transform.position = new Vector3(0, 0, -zAchsis);
+    // }
 
     // Update is called once per frame
 
