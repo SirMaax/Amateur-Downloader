@@ -90,8 +90,9 @@ public class Mover : MonoBehaviour
     public void OnMouseUp()
     {
         offset = Vector2.zero;
-        PopUpSpawner.layerInOrder = +1;
+        PopUpSpawner.layerInOrder +=1;
         sp.sortingOrder = PopUpSpawner.layerInOrder;
+        PopUpSpawner.layerInOrder +=1;
         var temp = transform.parent.position;
         if (type == 0)
         {

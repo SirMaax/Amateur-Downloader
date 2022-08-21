@@ -14,9 +14,16 @@ public class ProgressBar : MonoBehaviour
     public GameObject bar;
 
     public GameObject leftRand;
+
+    public Vector3 startPoint;
+    public Vector3 startPointBar;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        startPoint = transform.position;
+        startPointBar = bar.transform.position;
         Progress();
     }
     
@@ -41,6 +48,20 @@ public class ProgressBar : MonoBehaviour
     private IEnumerator CooldDown()
     {
         yield return new WaitForSeconds(timeBetweenMoves);
+        Progress();
+    }
+
+    public void Stop()
+    {
+        StartCoroutine(CooldDown());
+        Vector3 temp = transform.position;
+        bar.transform.localScale = new Vector3(4.19f, 4.19f, 4.19f);
+        bar.transform.position = startPointBar;
+        transform.position = startPoint;
+    }
+
+    public void Continue()
+    {
         Progress();
     }
 }
