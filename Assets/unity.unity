@@ -1476,7 +1476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: 9d9e02d511604d6459110a83840361fa, type: 3}
       propertyPath: m_Name
-      value: 7
+      value: VPN active
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d9e02d511604d6459110a83840361fa, type: 3}
@@ -1761,7 +1761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235455786
 GameObject:
@@ -2449,7 +2449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: 08e059d58fc89784ebd07ed072c15f00, type: 3}
       propertyPath: m_Name
-      value: 6
+      value: Virus Sound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e059d58fc89784ebd07ed072c15f00, type: 3}
@@ -2850,7 +2850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: 018a67a8ddbb1a741b549a70b68964ae, type: 3}
       propertyPath: m_Name
-      value: 8
+      value: DeadButtonPress
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 018a67a8ddbb1a741b549a70b68964ae, type: 3}
@@ -3084,7 +3084,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389245200
 GameObject:
@@ -3767,8 +3767,8 @@ Transform:
   m_LocalScale: {x: 4.19, y: 4.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 726788957}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &455090344
 SpriteRenderer:
@@ -3819,7 +3819,7 @@ SpriteRenderer:
   m_Size: {x: 1.38, y: 0.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &471197411
@@ -4321,7 +4321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &501534687
 MonoBehaviour:
@@ -4685,7 +4685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525684115
 Transform:
   m_ObjectHideFlags: 0
@@ -4698,8 +4698,8 @@ Transform:
   m_LocalScale: {x: 5.9106, y: 0.388, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 726788957}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &525684117
 SpriteRenderer:
@@ -4966,7 +4966,7 @@ Transform:
   - {fileID: 447150126}
   - {fileID: 632275249}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619756181
 GameObject:
@@ -5429,7 +5429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: c475cadf51089a2458574c74d8c2567f, type: 3}
       propertyPath: m_Name
-      value: 5
+      value: GameOver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c475cadf51089a2458574c74d8c2567f, type: 3}
@@ -5864,7 +5864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: 750daa0d57bc05242acc9ebab2473eb0, type: 3}
       propertyPath: m_Name
-      value: 3
+      value: Police
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 750daa0d57bc05242acc9ebab2473eb0, type: 3}
@@ -6254,7 +6254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &873914791
 MonoBehaviour:
@@ -6357,6 +6357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpObject: {fileID: 1692481757}
+  buttons: {fileID: 0}
+  guide: {fileID: 0}
   tabs:
   - {fileID: 447150124}
   - {fileID: 1561321857}
@@ -7876,7 +7878,7 @@ Transform:
   - {fileID: 761100719}
   - {fileID: 863097424}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1017693037
 GameObject:
@@ -8315,7 +8317,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1065828739
 GameObject:
@@ -9546,7 +9548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: 226ab2a50b9502a4cb935c60cd5147df, type: 3}
       propertyPath: m_Name
-      value: 2
+      value: MouseClickSound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 226ab2a50b9502a4cb935c60cd5147df, type: 3}
@@ -9950,7 +9952,7 @@ Transform:
   - {fileID: 1969069186}
   - {fileID: 510400261}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280169334
 GameObject:
@@ -10836,8 +10838,8 @@ Transform:
   m_LocalScale: {x: 4.19, y: 4.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 726788957}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1333193642
 SpriteRenderer:
@@ -10888,7 +10890,7 @@ SpriteRenderer:
   m_Size: {x: 0.66, y: 0.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1343852811
@@ -11376,7 +11378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: f2cb58b80bebf454a81f2e4b64af99ab, type: 3}
       propertyPath: m_Name
-      value: 4
+      value: PopUpSound Popup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2cb58b80bebf454a81f2e4b64af99ab, type: 3}
@@ -11436,7 +11438,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -280882757
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba49aa15aec6ea348a3a5b632dd4d47d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11940,7 +11942,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1686873865
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -11966,7 +11968,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547936302
 GameObject:
@@ -12635,7 +12637,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -280882757
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 622b2fad2683d5243934bccc1b493ca8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13023,7 +13025,7 @@ Transform:
   - {fileID: 104594446}
   - {fileID: 665114598}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692481757
 GameObject:
@@ -13041,7 +13043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1692481758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13082,7 +13084,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702572726
 GameObject:
@@ -14165,7 +14167,7 @@ Transform:
   - {fileID: 2142161255}
   - {fileID: 375879634}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1858771165 stripped
 AudioSource:
@@ -15593,8 +15595,8 @@ Transform:
   m_LocalScale: {x: 4.19, y: 4.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 726788957}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2010796676
 SpriteRenderer:
@@ -15645,7 +15647,7 @@ SpriteRenderer:
   m_Size: {x: 0.3, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2018023498
@@ -15873,7 +15875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308496285293588043, guid: 869d963534507934e969218dd6e0e039, type: 3}
       propertyPath: m_Name
-      value: 1
+      value: Keyboard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 869d963534507934e969218dd6e0e039, type: 3}
@@ -16299,7 +16301,7 @@ Transform:
   - {fileID: 1431528027}
   - {fileID: 1076153629}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142161254
 GameObject:
