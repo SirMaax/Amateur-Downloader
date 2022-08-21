@@ -6,7 +6,6 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool stop = false;
     public int nonEffect;
     public static int effect = 0;
     [Header("Blackscree")] 

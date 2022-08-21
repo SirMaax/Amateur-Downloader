@@ -24,16 +24,13 @@ public class PopUp : MonoBehaviour
     public float zachsis;
     
     [Header("Privat Stuff")] 
-    private bool closing = false;
     public Vector2 offset;
-    private bool canDelete;
 
     [Header("Refs")] 
     public PopUpSpawner spawner;
     
     void Start()
     {
-        closing = false;
         SetAnimation();
         SetSize();
         SetChildren();
@@ -63,7 +60,6 @@ public class PopUp : MonoBehaviour
 
     public void DestroyObject()
     {
-        closing = true;
         Debug.Log("clicked on popup");
         if (!hasCloseTime) RemoveObject();
         else StartCoroutine(Destroy());

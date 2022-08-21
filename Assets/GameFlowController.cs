@@ -17,15 +17,19 @@ public class GameFlowController : MonoBehaviour
     public static bool NextLevel;
     public static int currentLevel;
     private SoundManager sound;
+    public GameObject CutsceneScript;
 
-
+    public GameObject[] allButtons;
+    public GameObject[] allGuides;
+    public GameObject progresBar;
+    
     [Header("Level1")] public GameObject tabCollider;
     // Start is called before the first frame update
     void Start()
     {
         popUpSpawner = popUpObject.GetComponent<PopUpSpawner>();
         sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
-
+        currentLevel = 0;
     }
 
     // Update is called once per frame
@@ -41,17 +45,17 @@ public class GameFlowController : MonoBehaviour
         if (tab == 0)
         {
             //deavtive all Button
+            buttons.SetActive(true);
+            //Activate Guide
+            guide.SetActive(false);
+        }
+        else
+        {
+            
             buttons.SetActive(false);
             //Activate Guide
             guide.SetActive(true);
 
-        }
-        else
-        {
-            buttons.SetActive(true);
-            //Activate Guide
-            guide.SetActive(false);
- 
 
             //AdtiveButtonk
             //deacitve Guide
@@ -75,10 +79,16 @@ public class GameFlowController : MonoBehaviour
     private void TriggerGameOver()
     {
         sound.Play(5);
+        
     }
 
     private void TriggerNextLevel()
     {
+        NextLevel = false;
+        Debug.Log("next level");
+        //Deactivate all stuff 
+        StopAll();
+        // CutsceneScript.GetComponent<CutsceneScript>().EndLevel(currentLevel);
         
     }
 
@@ -86,5 +96,27 @@ public class GameFlowController : MonoBehaviour
     {
         tabCollider.SetActive(true);
         buttons.SetActive(true);
+    }
+
+    public void StartNextLevel()
+    {
+        currentLevel++;
+        buttons = allButtons[currentLevel];
+        guide = allButtons[currentLevel];
+        buttons.SetActive(true);
+        
+        //Acitvate Buttons
+        //Deactive Guide but load next guide
+        progresBar.transform.GetChild(0).gameObject.GetComponent<ProgressBar>().Continue();
+
+    }
+
+    private void StopAll()
+    {
+        buttons.SetActive(false);
+        guide.SetActive(false);
+        popUpSpawner.GetComponent<PopUpSpawner>().Stop();
+        progresBar.transform.GetChild(0).gameObject.GetComponent<ProgressBar>().Stop();
+        //Progressbar back
     }
 }

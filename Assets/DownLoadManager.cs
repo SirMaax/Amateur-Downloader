@@ -50,6 +50,7 @@ public class DownLoadManager : MonoBehaviour
         Downloading = false;
         if (currentDownload)
         {
+            
             GameFlowController.NextLevel = true;
             currentDownload = false;
         }

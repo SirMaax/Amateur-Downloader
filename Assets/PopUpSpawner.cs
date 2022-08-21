@@ -143,4 +143,23 @@ public class PopUpSpawner : MonoBehaviour
             }
         }
     }
+
+    public void Stop()
+    {
+        //Delete all POpups
+        StopCoroutine(SpawnCooldown());
+        canSpawn = false;
+
+        zAchsis = 2;
+        zAchsisWindows = 50;
+
+        foreach (GameObject ele in tabObject[0])
+        {
+            Destroy(ele);
+        }
+        foreach (GameObject ele in tabObject[1])
+        {
+            Destroy(ele);
+        }
+    }
 }
