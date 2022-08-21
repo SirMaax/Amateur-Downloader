@@ -65,6 +65,14 @@ public class DownLoadManager : MonoBehaviour
                 //Trigger Virus
                 virus.GetComponent<Virus>().Flicker();
             }
+            else if (r == 3)
+            {
+                //Spawn POP UP WINDOWS CAT
+            }
+            else if (r == 0)
+            {
+                //Spawn POP UP WINDOWS NOUDLE
+            }
         }
     }
 }

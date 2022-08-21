@@ -29,6 +29,8 @@ public class PopUpSpawner : MonoBehaviour
     
     [Header("Private Stuff")] public static int layerInOrder = 1;
     public static float zAchsis = 2;
+
+    public static float zAchsisWindows = 50;
     //-----------------------------------------------
 
     private void Start()

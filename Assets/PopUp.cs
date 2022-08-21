@@ -121,7 +121,7 @@ public class PopUp : MonoBehaviour
         transform.GetChild(4).GetComponent<BoxScript>().popUp = this;
         transform.GetChild(5).GetComponent<BoxScript>().popUp = this;
         transform.GetChild(6).GetComponent<BoxScript>().popUp = this;
-        transform.GetChild(0).GetComponent<Mover>().zAchsis = (zachsis + 0.01f);
+        // transform.GetChild(0).GetComponent<Mover>().zAchsis = (zachsis + 0.01f);
         transform.GetChild(1).GetComponent<BoxScript>().zAchsis = zachsis;
         transform.GetChild(2).GetComponent<BoxScript>().zAchsis = zachsis;
         transform.GetChild(3).GetComponent<BoxScript>().zAchsis = zachsis;

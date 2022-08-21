@@ -43,6 +43,13 @@ public class BoxScript : MonoBehaviour
         }else if (effect == -1)
         {
             sound.Play(8);
+        }else if (effect == 2)
+        {
+            //2 is Close popup
+            Destroy(transform.parent.gameObject);
         }
+
+        
+
     }
 }

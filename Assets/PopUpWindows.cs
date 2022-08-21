@@ -9,6 +9,6 @@ public class PopUpWindows : MonoBehaviour
     // Start is called before the first frame update
     public void OnMouseDown()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
