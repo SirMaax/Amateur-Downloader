@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DownLoadManager : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class DownLoadManager : MonoBehaviour
     private Animator Animator;
     private SpriteRenderer sp;
     public GameObject virus;
+    public GameObject catPreFab;
+    public GameObject noudlePreFa;
+    public float x;
+    public float y;
     void Start()
     {
         Animator = GetComponent<Animator>();
@@ -47,6 +53,8 @@ public class DownLoadManager : MonoBehaviour
 
     private void Finish()
     {
+        Animator.enabled = false;
+        sp.enabled = false;
         Downloading = false;
         if (currentDownload)
         {
@@ -71,10 +79,22 @@ public class DownLoadManager : MonoBehaviour
             else if (r == 3)
             {
                 //Spawn POP UP WINDOWS CAT
+                Vector3 pos = Vector3.zero;
+                pos.x = Random.Range(-x, x);
+                pos.y = Random.Range(-y, y);
+                PopUpSpawner.zAchsisWindows++;
+                pos.z = -PopUpSpawner.zAchsisWindows;
+                GameObject go = Instantiate(catPreFab, pos, Quaternion.identity);
             }
             else if (r == 0)
             {
                 //Spawn POP UP WINDOWS NOUDLE
+                Vector3 pos = Vector3.zero;
+                pos.x = Random.Range(-x, x);
+                pos.y = Random.Range(-y, y);
+                PopUpSpawner.zAchsisWindows++;
+                pos.z = -PopUpSpawner.zAchsisWindows;
+                GameObject go = Instantiate(noudlePreFa, pos, Quaternion.identity);
             }
         }
     }

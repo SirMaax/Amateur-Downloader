@@ -15,13 +15,15 @@ public class ProgressBar : MonoBehaviour
 
     public GameObject leftRand;
 
-    public float startPoint;
-    public float startPointBar;
+    public Vector3 startPoint;
+    public Vector3 startPointBar;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        startPoint = transform.position;
+        startPointBar = bar.transform.position;
         Progress();
     }
     
@@ -53,10 +55,9 @@ public class ProgressBar : MonoBehaviour
     {
         StartCoroutine(CooldDown());
         Vector3 temp = transform.position;
-        temp.x = startPoint;
         bar.transform.localScale = new Vector3(4.19f, 4.19f, 4.19f);
-        temp.x = startPointBar;
-        bar.transform.position = temp;
+        bar.transform.position = startPointBar;
+        transform.position = startPoint;
     }
 
     public void Continue()
