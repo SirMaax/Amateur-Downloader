@@ -7,8 +7,10 @@ public class Button : MonoBehaviour
 {
     [Header("Info")] 
     public bool realButton;
-
     public String info;
+
+    [Header("Downloading")] public static bool Downloading;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,19 @@ public class Button : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("info");
+        if (Downloading)
+        {
+            //Play negative Sound
+            return;
+        }
+        else
+        {
+            //CanDownload
+            Downloading = true;
+            //StartTimeTillCompletion
+        }
+        
     }
+    
+    P
 }
