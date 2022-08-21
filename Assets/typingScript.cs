@@ -11,6 +11,7 @@ public class typingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindWithTag("Audio").GetComponent<SoundManager>().Play(1);
         StartCoroutine(typeText());
     }
 
@@ -27,6 +28,8 @@ public class typingScript : MonoBehaviour
             yield return new WaitForSeconds( 0.05f );
         }
         transform.parent.GetComponent<CutsceneScript>().InitPhase2();
+        GameObject.FindWithTag("Audio").GetComponent<SoundManager>().audio[1].Stop();
+
         Destroy(gameObject);
     }
 
