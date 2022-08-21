@@ -85,5 +85,6 @@ public class GameFlowController : MonoBehaviour
     public void AcitvateLevel0()
     {
         tabCollider.SetActive(true);
+        buttons.SetActive(true);
     }
 }
