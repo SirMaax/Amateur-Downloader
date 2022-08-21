@@ -7,7 +7,8 @@ public class DownLoadManager : MonoBehaviour
     // Start is called before the first frame update
     public bool Downloading = false;
     public float timeForDownload;
-
+    public bool currentDownload;
+    public GameObject virus;
     void Start()
     {
         
@@ -28,6 +29,7 @@ public class DownLoadManager : MonoBehaviour
         }
         else
         {
+            currentDownload = real;
             //CanDownload
             Downloading = true;
             StartCoroutine(TimeTillDownloadComplete());
@@ -43,6 +45,26 @@ public class DownLoadManager : MonoBehaviour
 
     private void Finish()
     {
-        
+        Downloading = false;
+        if (currentDownload)
+        {
+            GameFlowController.NextLevel = true;
+            currentDownload = false;
+        }
+        else
+        {
+            //Random Effect open VIRUS OR PNG
+            int r = Random.Range(0, 4);
+            if (r == 1)
+            {
+                //Trigger Virus
+                virus.GetComponent<Virus>().BlackScreen();
+            }
+            else if (r == 2)
+            {
+                //Trigger Virus
+                virus.GetComponent<Virus>().Flicker();
+            }
+        }
     }
 }

@@ -87,8 +87,9 @@ public class PopUpSpawner : MonoBehaviour
         SpriteRenderer sp = popUp.GetComponent<SpriteRenderer>();
         // sp.color = Random.ColorHSV();
         
-        layerInOrder++;
+        
         sp.sortingOrder = layerInOrder;
+        layerInOrder++;
         
         zAchsis +=0.01f;
         

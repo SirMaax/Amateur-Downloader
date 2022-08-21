@@ -41,7 +41,7 @@ public class Virus : MonoBehaviour
         blackScreen.SetActive(false);
     }
 
-    private void Flicker()
+    public void Flicker()
     {
         blackScreen.SetActive(true);
         StartCoroutine(Flickering());
