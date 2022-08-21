@@ -8,18 +8,17 @@ public class DownLoadManager : MonoBehaviour
     public bool Downloading = false;
     public float timeForDownload;
     public bool currentDownload;
+    private Animator Animator;
+    private SpriteRenderer sp;
     public GameObject virus;
     void Start()
     {
-        
+        Animator = GetComponent<Animator>();
+        Animator.enabled = false;
+        sp = GetComponent<SpriteRenderer>();
+        sp.enabled = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public void StartDownload(bool real)
     {
         if (Downloading)
@@ -30,6 +29,9 @@ public class DownLoadManager : MonoBehaviour
         else
         {
             currentDownload = real;
+            Animator.enabled = true;
+            sp.enabled = true;
+
             //CanDownload
             Downloading = true;
             StartCoroutine(TimeTillDownloadComplete());

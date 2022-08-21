@@ -31,6 +31,7 @@ public class Virus : MonoBehaviour
 
     public void BlackScreen()
     {
+        sound.Play(6);
         blackScreen.SetActive(true);
         StartCoroutine(BlackScreenDuration());
     }
@@ -43,6 +44,7 @@ public class Virus : MonoBehaviour
 
     public void Flicker()
     {
+        sound.Play(6);
         blackScreen.SetActive(true);
         StartCoroutine(Flickering());
     }

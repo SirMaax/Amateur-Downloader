@@ -39,16 +39,16 @@ public class GameFlowController : MonoBehaviour
         if (tab == 0)
         {
             //deavtive all Button
-            tabs[2].SetActive(false);
+            buttons.SetActive(false);
             //Activate Guide
-            tabs[3].SetActive(true);
+            guide.SetActive(true);
 
         }
         else
         {
-            tabs[2].SetActive(true);
+            buttons.SetActive(true);
             //Activate Guide
-            tabs[3].SetActive(false);
+            guide.SetActive(false);
  
 
             //AdtiveButtonk
