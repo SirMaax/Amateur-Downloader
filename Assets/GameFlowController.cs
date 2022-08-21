@@ -82,7 +82,7 @@ public class GameFlowController : MonoBehaviour
         
     }
 
-    private void AcitvateLevel()
+    public void AcitvateLevel0()
     {
         tabCollider.SetActive(true);
     }

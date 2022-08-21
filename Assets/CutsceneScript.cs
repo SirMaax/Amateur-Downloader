@@ -5,7 +5,7 @@ using UnityEngine;
 public class CutsceneScript : MonoBehaviour
 {   
 
-    public GameObject[] levelObjects;
+    public GameObject gameController;
     public Sprite[] browserSprites; 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +29,14 @@ public class CutsceneScript : MonoBehaviour
 
     public void InitFinishCutscene(){
         transform.GetChild(0).gameObject.SetActive(false);
-        foreach(GameObject g in levelObjects)
-            g.SetActive(true);
+        gameController.SetActive(true);
+        gameController.gameObject.GetComponent<GameFlowController>().AcitvateLevel0();
         
 
     }
 
     public void EndLevel0(){
-        foreach(GameObject g in levelObjects)
-            g.SetActive(false);
+        gameController.SetActive(false);
         
     }
 }
