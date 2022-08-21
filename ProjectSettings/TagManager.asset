@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -55,4 +56,10 @@ TagManager:
     locked: 0
   - name: Windows
     uniqueID: 3104371339
+    locked: 0
+  - name: ProgressBar
+    uniqueID: 4014084539
+    locked: 0
+  - name: Virus
+    uniqueID: 2608093431
     locked: 0

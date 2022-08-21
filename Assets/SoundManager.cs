@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static AudioSource[] audio;
+    public AudioSource[] audio;
     void Start()
     {
         
@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
 
 
 
-    public static void Play(int index)
+    public void Play(int index)
     {
         audio[index].Play();
     }

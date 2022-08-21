@@ -8,14 +8,17 @@ public class BoxScript : MonoBehaviour
 
     [Header("Info")] 
     public int effect = -1;
+    public float zAchsis;
 
     [Header("Refs")] 
     public PopUp popUp;
+    private SoundManager sound;
 
-    public float zAchsis;
     //art is called before the first frame update
     void Start()
     {
+        sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
         zAchsis = +0.01f;
         // gameObject.transform.position = new Vector3(0, 0, -zAchsis);
     }
@@ -37,6 +40,9 @@ public class BoxScript : MonoBehaviour
         }else if (effect == 1)
         {
             popUp.TriggerEffect(1);
+        }else if (effect == -1)
+        {
+            sound.Play(8);
         }
     }
 }

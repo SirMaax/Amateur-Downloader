@@ -8,20 +8,24 @@ public class GameFlowController : MonoBehaviour
 
     [Header("Refs")] public GameObject popUpObject;
     private PopUpSpawner popUpSpawner;
-    public GameObject[] tabs;
-
+    public GameObject[] tabs; 
     public static bool GameOver = false;
+    private SoundManager sound;
+
     // Start is called before the first frame update
     void Start()
     {
         popUpSpawner = popUpObject.GetComponent<PopUpSpawner>();
-        
+        sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameOver) TriggerGameOver();
+
+
     }
 
     public void SwitchToTab(int tab)
@@ -40,5 +44,10 @@ public class GameFlowController : MonoBehaviour
         tabs[tab].SetActive(true);
         
         CURRENTAB = tab;
+    }
+
+    private void TriggerGameOver()
+    {
+        sound.Play(5);
     }
 }

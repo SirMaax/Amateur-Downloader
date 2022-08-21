@@ -25,12 +25,15 @@ public class PopUpSpawner : MonoBehaviour
 
     [Header("Refs")] public GameObject popupPrefab;
     public int[] test;
+    private SoundManager sound;
+    
     [Header("Private Stuff")] public static int layerInOrder = 1;
     public static float zAchsis = 2;
     //-----------------------------------------------
 
     private void Start()
     {
+        sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
         tabObject = new ArrayList[3];
         tabObject[0] = new ArrayList();
         tabObject[1] = new ArrayList();
@@ -90,6 +93,7 @@ public class PopUpSpawner : MonoBehaviour
         zAchsis +=0.01f;
         
         tabObject[GameFlowController.CURRENTAB].Add(popUp);
+        sound.Play(4);
     }
 
     public ArrayList[] GetTabObject()

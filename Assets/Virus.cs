@@ -17,9 +17,14 @@ public class Virus : MonoBehaviour
     [SerializeField] private int amountOfFlicker;
     [SerializeField] private float timeBetweenFlicker;
     private int originalAmount;
+    
+    [Header("REFS")]
+    private SoundManager sound;
 
     private void Start()
     {
+        sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
         effect = nonEffect;
         originalAmount = amountOfFlicker;
     }
@@ -67,17 +72,20 @@ public class Virus : MonoBehaviour
         {
             //Blackscreen
             effect = 0;
+            sound.Play(6);
             BlackScreen();
         }
         else if (effect == 2)
         {
             effect = 0;
+            sound.Play(6);
             //Flickering Screen
             Flicker();
         }
         else if (effect == 2)
         {
             effect = 0;
+            sound.Play(6);
             //Flickering Screen
             //Audio Effect
         }
