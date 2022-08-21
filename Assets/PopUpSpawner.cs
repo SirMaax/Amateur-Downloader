@@ -41,7 +41,7 @@ public class PopUpSpawner : MonoBehaviour
         tabObject[1] = new ArrayList();
         tabObject[2] = new ArrayList();
         // Test();
-        StartCoroutine(SpawnCooldown());
+        // StartCoroutine(SpawnCooldown());
     }
 
     // Update is called once per frame
