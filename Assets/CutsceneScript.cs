@@ -15,8 +15,8 @@ public class CutsceneScript : MonoBehaviour
     public Sprite[] tabTextSprites;
 
     public Sprite[] popUpSprites;
-    
 
+    public GameObject bar;
     int iter;
     int vpnState;
     // Start is called before the first frame update
@@ -78,7 +78,8 @@ public class CutsceneScript : MonoBehaviour
             // Enables the Game Controller
             gameController.SetActive(true);
             // Starts Level 0
-            gameController.gameObject.GetComponent<GameFlowController>().AcitvateLevel0();
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = browserSprites[0];
+            gameController.gameObject.GetComponent<GameFlowController>().AcitvateLevel1();
         }
 
     }
@@ -89,6 +90,7 @@ public class CutsceneScript : MonoBehaviour
         Debug.Log("YOOOOO");
         if(iter == 0) {
             cutsceneObjects[0].gameObject.SetActive(true);
+            bar.SetActive(true);
 
         }
         else {
@@ -111,11 +113,18 @@ public class CutsceneScript : MonoBehaviour
         else{
             if(vpnState == 0){
                 cutsceneObjects[1].GetComponent<SpriteRenderer>().sprite = popUpSprites[1];
+                vpnState++;
             }
             else{
                 cutsceneObjects[1].gameObject.SetActive(false);
                 cutsceneObjects[1].GetComponent<SpriteRenderer>().sprite = popUpSprites[0];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = tabTextSprites[1];
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(3).gameObject.SetActive(true);
                 transform.GetChild(3).GetComponent<typingScript>().doStuff();
+                vpnState = 0;
             }
         }
     }

@@ -22,9 +22,13 @@ public class GameFlowController : MonoBehaviour
     public GameObject[] allButtons;
     public GameObject[] allGuides;
     public GameObject progresBar;
-    
+    public GameObject gameover;
     [Header("Level1")] public GameObject tabCollider;
     // Start is called before the first frame update
+
+    [Header("Level2")] 
+    public GameObject Level2;
+    public Sprite teil2;
     void Start()
     {
         popUpSpawner = popUpObject.GetComponent<PopUpSpawner>();
@@ -81,7 +85,8 @@ public class GameFlowController : MonoBehaviour
     {
         sound.Play(5);
         StopAll();
-        
+        sound.enabled = false;
+        gameover.SetActive(true);
     }
 
     private void TriggerNextLevel()
@@ -103,13 +108,15 @@ public class GameFlowController : MonoBehaviour
     public void StartNextLevel()
     {
         currentLevel++;
-        buttons = allButtons[currentLevel];
-        guide = allButtons[currentLevel];
+        buttons = allButtons[1];
+        guide = allGuides[1];
         buttons.SetActive(true);
-        
+        guide.SetActive(false);
         //Acitvate Buttons
         //Deactive Guide but load next guide
+        popUpSpawner.GetComponent<PopUpSpawner>().Continue();
         progresBar.transform.GetChild(0).gameObject.GetComponent<ProgressBar>().Continue();
+        CURRENTAB = 0;
 
     }
 
@@ -120,5 +127,11 @@ public class GameFlowController : MonoBehaviour
         popUpSpawner.GetComponent<PopUpSpawner>().Stop();
         progresBar.transform.GetChild(0).gameObject.GetComponent<ProgressBar>().Stop();
         //Progressbar back
+    }
+
+    public void AcitvateLevel1()
+    {
+        tabCollider.SetActive(true);
+        StartNextLevel();
     }
 }

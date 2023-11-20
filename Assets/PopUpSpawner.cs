@@ -29,7 +29,7 @@ public class PopUpSpawner : MonoBehaviour
     
     [Header("Private Stuff")] public static int layerInOrder = 1;
     public static float zAchsis = 2;
-
+    public bool outOfLevel = false;
     public static float zAchsisWindows = 50;
     //-----------------------------------------------
 
@@ -72,7 +72,7 @@ public class PopUpSpawner : MonoBehaviour
 
     private void SpawnWhenPossible()
     {
-        if (!canSpawn) return;
+        if (!canSpawn || outOfLevel) return;
         canSpawn = false;
         StartCoroutine(SpawnCooldown());
 
@@ -147,6 +147,7 @@ public class PopUpSpawner : MonoBehaviour
     public void Stop()
     {
         //Delete all POpups
+        outOfLevel = true;
         StopCoroutine(SpawnCooldown());
         canSpawn = false;
 
@@ -155,16 +156,24 @@ public class PopUpSpawner : MonoBehaviour
 
         foreach (GameObject ele in tabObject[0])
         {
+            tabObject[0].Remove(ele);
             Destroy(ele);
         }
         foreach (GameObject ele in tabObject[1])
         {
+            tabObject[1].Remove(ele);
             Destroy(ele);
         }
         
         
     }
 
+    public void Continue()
+    {
+        outOfLevel = false;
+        StartIn5();
+    }
+    
     public void StartIn5()
     {
         StartCoroutine(FirstSpawn());

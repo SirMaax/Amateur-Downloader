@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Generator : MonoBehaviour
@@ -52,12 +50,7 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gen)
-        {
-            gen = false;
-            StartCoroutine(CoolDown());
             SetSize();
-        }
         
     }
 

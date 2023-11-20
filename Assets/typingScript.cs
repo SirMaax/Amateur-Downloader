@@ -7,11 +7,13 @@ public class typingScript : MonoBehaviour
 {
 
     private Vector3 startPos;
+    private Vector3 startScale;
     [SerializeField] int steps; 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        startScale = transform.localScale;
         GameObject.FindWithTag("Audio").GetComponent<SoundManager>().Play(1);
     }
 
@@ -36,6 +38,7 @@ public class typingScript : MonoBehaviour
         GameObject.FindWithTag("Audio").GetComponent<SoundManager>().audio[1].Stop();
 
         transform.position = startPos;
+        transform.localScale = startScale;
         gameObject.SetActive(false);
     }
 
