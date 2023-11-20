@@ -39,7 +39,8 @@ public class BoxScript : MonoBehaviour
             return;
         }else if (effect == 1)
         {
-            popUp.TriggerEffect(1);
+            popUp.DestroyObject();
+            return;
         }else if (effect == -1)
         {
             sound.Play(8);

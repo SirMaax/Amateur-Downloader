@@ -79,6 +79,7 @@ public class Mover : MonoBehaviour
         if (type == 2 || type == 3)
         {
     //TRIGGER FOR EXPIRE
+            GameObject.FindWithTag("Cutscene").GetComponent<CutsceneScript>().EndCutscene();
             
         }
         else
@@ -90,8 +91,9 @@ public class Mover : MonoBehaviour
     public void OnMouseUp()
     {
         offset = Vector2.zero;
-        PopUpSpawner.layerInOrder = +1;
+        PopUpSpawner.layerInOrder +=1;
         sp.sortingOrder = PopUpSpawner.layerInOrder;
+        PopUpSpawner.layerInOrder +=1;
         var temp = transform.parent.position;
         if (type == 0)
         {

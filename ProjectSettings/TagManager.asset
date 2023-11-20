@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Audio
+  - Downloader
+  - Cutscene
   layers:
   - Default
   - TransparentFX
@@ -65,4 +67,7 @@ TagManager:
     locked: 0
   - name: Virus
     uniqueID: 2608093431
+    locked: 0
+  - name: StartLayer
+    uniqueID: 51067661
     locked: 0
